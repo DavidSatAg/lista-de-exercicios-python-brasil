@@ -22,5 +22,13 @@ Faça um Programa que peça 2 números inteiros e um número real. Calcule e mos
 
 def calcular_formulas():
     """Escreva aqui em baixo a sua solução"""
-
+    num_1_inteiro = int(input("Digite o primeiro número inteiro: "))
+    num_2_inteiro = int(input("Digite o segundo número inteiro: "))
+    num_1_real = float(input("Digite o primeiro número real: "))
+    operacao_1 = (2 * num_1_inteiro) * (num_2_inteiro / 2)
+    operacao_2 = (3 * num_1_inteiro) + num_1_real
+    operacao_3 = num_1_real ** 3
+    print(f"O produto do dobro do primeiro com metade do segundo é {operacao_1:.2f}")
+    print(f"A soma do triplo do primeiro com o terceiro é {operacao_2:.2f}")
+    print(f"O terceiro elevado ao cubo é {operacao_3:.2f}")
 
