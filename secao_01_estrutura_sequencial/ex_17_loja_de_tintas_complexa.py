@@ -30,9 +30,9 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 
 def calcular_latas_e_preco_de_tinta():
     """Escreva aqui em baixo a sua solução"""
-    area_a_ser_pintada = float(input("Insira a área em metros quadrados a ser pintada: "))
-    tinta_necessaria = (area_a_ser_pintada / 6) * 1.1
     import math
+    area_a_ser_pintada = float(input("Insira a área em metros quadrados a ser pintada: "))
+    tinta_necessaria = math.ceil((area_a_ser_pintada / 6) * 1.1)
     latas_necessarias = math.ceil(tinta_necessaria / 18)
     preco_latas = latas_necessarias * 80
     galoes_necessarios = math.ceil(tinta_necessaria / 3.6)
