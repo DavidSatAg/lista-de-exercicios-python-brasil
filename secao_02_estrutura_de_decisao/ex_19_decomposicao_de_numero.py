@@ -52,3 +52,50 @@ Observando os termos no plural a colocação do "e", da vírgula entre outros. E
 
 def decompor_numero(numero: int):
     """Escreva aqui em baixo a sua solução"""
+    centenas = numero // 100
+    dezenas = (numero % 100) // 10
+    unidades = ((numero % 100) % 10)
+    casas = 0
+    centenas_str = dezenas_str = unidades_str = ''
+    if numero < 0:
+        print("'O número precisa ser positivo'")
+    if numero > 999:
+        print("'O número precisa ser menor que 1000'")
+    else:
+        if centenas == 1:
+            centenas_str = 'centena'
+            casas += 1
+        elif centenas > 1:
+            centenas_str = 'centenas'
+            casas += 1
+        if dezenas == 1:
+            dezenas_str = 'dezena'
+            casas += 1
+        elif dezenas > 1:
+            dezenas_str = 'dezenas'
+            casas += 1
+        if unidades == 1:
+            unidades_str = 'unidade'
+            casas += 1
+        elif unidades > 1:
+            unidades_str = 'unidades'
+            casas += 1
+        if casas == 1:
+            if centenas != 0:
+                print(f"'{numero} = {centenas} {centenas_str}'")
+            elif dezenas != 0:
+                print(f"'{numero} = {dezenas} {dezenas_str}'")
+            else:
+                print(f"'{numero} = {unidades} {unidades_str}'")
+        elif casas == 3:
+            print(f"'{numero} = {centenas} {centenas_str}, {dezenas} {dezenas_str} e {unidades} {unidades_str}'")
+        elif casas == 2:
+            if centenas == 0:
+                print(f"'{numero} = {dezenas} {dezenas_str} e {unidades} {unidades_str}'")
+            elif dezenas == 0:
+                print(f"'{numero} = {centenas} {centenas_str} e {unidades} {unidades_str}'")
+            elif unidades == 0:
+                print(f"'{numero} = {centenas} {centenas_str} e {dezenas} {dezenas_str}'")
+
+
+
