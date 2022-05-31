@@ -24,5 +24,5 @@ def calcular_maior_de_3_numeros(x, y, z):
     calcular_maior_de_3_numeros = (x, y, z)
     maior = max(calcular_maior_de_3_numeros)
     menor = min(calcular_maior_de_3_numeros)
-    print("Maior:", maior)
-    print("Menor:", menor)
+    print(f"Maior: {maior}")
+    print(f"Menor: {menor}")
