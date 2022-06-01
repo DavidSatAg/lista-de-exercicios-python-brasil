@@ -130,4 +130,3 @@ def gerar_taboada(n: int) -> str:
         for i in range(1, 11, 1):
             multiplicacao = n * i
             print(f"{n} X {i} = {multiplicacao}")
-
