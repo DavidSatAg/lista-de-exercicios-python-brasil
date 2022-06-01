@@ -46,7 +46,6 @@ Mostar valores com uma casa decimal.
 
 def calcular_conceito(nota_1: float, nota_2: float):
     """Escreva aqui em baixo a sua solução"""
-    calcular_conceito = nota_1, nota_2
     media = (nota_1 + nota_2) / 2
     status = "APROVADO"
     if media >= 9:
