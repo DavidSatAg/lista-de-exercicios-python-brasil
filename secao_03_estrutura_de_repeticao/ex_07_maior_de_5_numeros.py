@@ -20,6 +20,5 @@ def calcular_maior_numero(n1: int, n2: int, n3: int, n4: int, n5: int, ) -> int:
         if lista[i] > maior:
             maior = lista[i]
         i += 1
-    else:
-        print(maior)
+    print(maior)
 
