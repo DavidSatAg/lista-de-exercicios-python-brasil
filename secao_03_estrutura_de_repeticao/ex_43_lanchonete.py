@@ -109,3 +109,49 @@ comprados.
 
 def fechar_conta(*itens):
     """Escreva aqui em baixo a sua solução"""
+    print("_____________________________________________________________________________")
+    print("|                              RESUMO DA CONTA                              |")
+    print("|---------------------------------------------------------------------------|")
+    print("| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |")
+    quantidade_100 = quantidade_101 = quantidade_102 = quantidade_103 = quantidade_104 = quantidade_105 = 0
+    if itens == ():
+        print("|---------------------------------------------------------------------------|")
+        print("| Total Geral:                                    |          0 |       0.00 |")
+        print("-----------------------------------------------------------------------------")
+    else:
+        for codigo, quantidade in itens:
+            if codigo == '100':
+                quantidade_100 += quantidade
+            if codigo == '101':
+                quantidade_101 += quantidade
+            if codigo == '102':
+                quantidade_102 += quantidade
+            if codigo == '103':
+                quantidade_103 += quantidade
+            if codigo == '104':
+                quantidade_104 += quantidade
+            if codigo == '105':
+                quantidade_105 += quantidade
+        lista_de_itens = [['Cachorro Quente', 100, 1.20, quantidade_100], ['Bauru Simples', 101, 1.30, quantidade_101],
+        ['Bauru com Ovo', 102, 1.50, quantidade_102], ['Hamburger', 103, 1.20, quantidade_103],
+        ['Cheeseburger', 104, 1.30, quantidade_104], ['Refrigerante', 105, 1.00, quantidade_105]]
+        i = 0
+        valor_total = 0
+        quantidade_itens = 0
+        while i < len(itens):
+            if lista_de_itens[i][3] != 0:
+                valor = lista_de_itens[i][2] * lista_de_itens[i][3]
+                valor_str = f'{valor:.2f}'
+                valor_total += valor
+                valor_total_str = f'{valor_total:.2f}'
+                preco_unitario = f'{lista_de_itens[i][2]:.2f}'
+                quantidade_itens += lista_de_itens[i][3]
+                print(f"| {str(lista_de_itens[i][0]).ljust(17)}| {str(lista_de_itens[i][1]).ljust(7)}| {preco_unitario.ljust(8)}            |         {str(lista_de_itens[i][3]).rjust(2)} |     {valor_str.rjust(6)} |")
+            i += 1
+        print("|---------------------------------------------------------------------------|")
+        print(f"| Total Geral:                                    |        {str(quantidade_itens). rjust(3)} | {valor_total_str.rjust(10)} |")
+        print("-----------------------------------------------------------------------------")
+
+
+    
+    
