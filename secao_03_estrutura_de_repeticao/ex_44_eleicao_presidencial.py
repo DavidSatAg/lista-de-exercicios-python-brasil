@@ -90,3 +90,31 @@ from collections import Counter
 
 def apurar_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
+    candidato_1 = candidato_2 = candidato_3 = candidato_4 = nulo = branco = 0
+    for voto in votos:
+        if voto == '1':
+            candidato_1 += 1
+        elif voto == '2':
+            candidato_2 += 1
+        elif voto == '3':
+            candidato_3 += 1
+        elif voto == '4':
+            candidato_4 += 1
+        elif voto == '5':
+            nulo += 1
+        elif voto == '6':
+            branco += 1
+    candidatos = [[1, 'Bostonaro', candidato_1], [2, 'Luladrão', candidato_2], [3, 'Dilmanta', candidato_3], [4, 'FHC Isentão', candidato_4], [5, 'Votos Nulos', nulo], [6, 'Votos Brancos', branco] ]
+    print(f'Código do Candidato Nome do Candidato Votos Porcentagem sobre total')
+    i = 0
+    for i in range(4):
+        porcentagem_str = f'{candidatos[i][2] * 100 / len(votos):.1f}'
+        if candidatos[i][0] != 0:
+            print(f'{candidatos[i][0]}                   {str(candidatos[i][1]).ljust(18)}{str(candidatos[i][2]).ljust(6)}{porcentagem_str.rjust(5)}%')
+    print(f'-------------------------------------------------------------------')
+    for i in range(4, 6, 1):
+        porcentagem_str = f'{candidatos[i][2] * 100 / len(votos):.1f}'
+        if candidatos[i][0] != 0:
+            print(f'{candidatos[i][0]}                   {str(candidatos[i][1]).ljust(18)}{str(candidatos[i][2]).ljust(6)}{porcentagem_str.rjust(5)}%')
+
+    
