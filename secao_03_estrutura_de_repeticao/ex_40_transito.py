@@ -48,8 +48,8 @@ def calcular_estatisticas(*cidades):
         total_veiculos += int(cidades[i][1])
     media = total_veiculos / len(cidades)
     media_de_acidentes_total_cidade_menos_150_000_habitantes = acidentes_cidade_menos_150_000_habitantes / contador
-    print(f"O maior índice de acidentes é de {nome_cidade_maior_indice}, com {maior_indice_acidentes:.1f} acidentes por mil habitantes.")
-    print(f"O menor índice de acidentes é de {nome_cidade_menor_indice}, com {menor_indice_acidentes:.1f} acidentes por mil habitantes.")
+    print(f"O maior índice de acidentes é de {nome_cidade_maior_indice}, com {maior_indice_acidentes:.1f} acidentes por mil carros.")
+    print(f"O menor índice de acidentes é de {nome_cidade_menor_indice}, com {menor_indice_acidentes:.1f} acidentes por mil carros.")
     print(f"O média de veículos por cidade é de {media:.0f}.")
-    print(f"A média de acidentes total nas cidades com menos de 150 mil habitantes é de {media_de_acidentes_total_cidade_menos_150_000_habitantes:.1f} acidentes.")
+    print(f"A média de acidentes total nas cidades com menos de 150 mil carros é de {media_de_acidentes_total_cidade_menos_150_000_habitantes:.1f} acidentes.")
         
