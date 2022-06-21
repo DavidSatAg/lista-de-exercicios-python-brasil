@@ -37,3 +37,15 @@ Mostre na tela:
 
 def lancar_dados(*valor_lancamentos):
     """Escreva aqui em baixo a sua solução"""
+    vezes = [0, 0, 0, 0, 0, 0]
+    for lado in valor_lancamentos:
+        vezes[lado - 1] += 1
+    print(f'O dado foi lançado {len(valor_lancamentos)} vezes')
+    mais_vezes = vezes[0]
+    face_mais_frequente = 1
+    for i in range(6):
+        if vezes[i] > mais_vezes:
+            mais_vezes = vezes[i]
+            face_mais_frequente = i + 1
+        print(f'O número {i + 1} caiu {vezes[i]} vezes')
+    print(f'O lado com o número {face_mais_frequente} caiu mais vezes ({max(vezes)} vezes)')
