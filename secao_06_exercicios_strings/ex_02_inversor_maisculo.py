@@ -21,3 +21,9 @@ letras maiúsculas ou minúsculas.
 
 def inversor(nome: str) -> str:
     """ Escreva seu código aqui embaixo """
+    i = -1
+    nome_invertido = ''
+    while i >= -len(nome):
+        nome_invertido += nome[i]
+        i -= 1
+    print(f"'{nome_invertido.upper()}'")
