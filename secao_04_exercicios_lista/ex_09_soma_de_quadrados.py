@@ -19,3 +19,13 @@ vetor.
 
 def calcular_soma_de_quadrados(inteiros: list) -> int:
     """Escreva aqui em baixo a sua solução"""
+    # if inteiros == []:
+    #     print("0")
+    # else:
+    #     n = inteiros[-1]
+    #     print(f"{(n * (2 * n + 1) * (n + 1)) / 6:.0f}")
+
+    soma_de_quadrados = 0
+    for numero in inteiros:
+        soma_de_quadrados += numero ** 2
+    print(soma_de_quadrados)

@@ -17,3 +17,10 @@ Faça um Programa que peça dois números e imprima o maior deles.
 
 def maior_de_dois_numeros(x, y):
     """Escreva aqui em baixo a sua solução"""
+    maior_de_dois_numeros = (x, y)
+    numero_1 = x
+    numero_2 = y
+    if numero_1 > numero_2:
+        print(numero_1)
+    else:
+        print(numero_2)

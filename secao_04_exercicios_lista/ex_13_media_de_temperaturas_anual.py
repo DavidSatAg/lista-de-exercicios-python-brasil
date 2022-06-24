@@ -46,4 +46,22 @@ e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – F
 
 def temperaturas_acima_da_media():
     """Escreva aqui sua solução: """
+    lista_temperaturas = []
+    lista_indices = list(range(1, 13, 1))
+    lista_meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro',
+     'Outubro', 'Novembro', 'Dezembro']
+    for _ in range(12):
+        temperatura_media_mes = int(input("Insira a temperatura média do mês: "))
+        lista_temperaturas.append(temperatura_media_mes)
+    lista_geral = list(zip(lista_indices, lista_meses, lista_temperaturas))
 
+
+    from statistics import mean
+    temperatura_media_anual = mean(lista_temperaturas)
+
+
+    print(f'Média anual: {temperatura_media_anual:.2f} Graus')
+    for i in range(12):
+        mes = f'{lista_geral[i][1]}:'
+        if lista_geral[i][2] > temperatura_media_anual:
+            print(f"{str(lista_geral[i][0]).rjust(2)} - {mes.ljust(14)} {lista_geral[i][2]}°")

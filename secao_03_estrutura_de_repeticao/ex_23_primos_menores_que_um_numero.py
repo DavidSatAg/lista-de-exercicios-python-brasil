@@ -43,3 +43,19 @@ from typing import Tuple
 
 def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
     """Escreva aqui em baixo a sua solução"""
+    primos = []
+    divisoes = 0
+    if n > 1:
+        primos.append(2)
+        for numero in range(3, n + 1):
+            divisores = 0
+            for denominadores in range(2, n + 1):
+                if numero % denominadores == 0:
+                    divisores += 1
+            if divisores < 2:
+                primos.append(numero)
+                divisoes += 1
+    primos = str(primos)
+    primos = primos[1:-1]
+    return primos, divisoes
+

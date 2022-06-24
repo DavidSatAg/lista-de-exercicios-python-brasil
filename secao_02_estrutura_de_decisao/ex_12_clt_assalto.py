@@ -53,3 +53,42 @@ até R$ 99999,99
 
 def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
     """Escreva aqui em baixo a sua solução"""
+    salario_bruto = valor_hora * horas_trabalhadas
+    if salario_bruto <= 900:
+        ir = 0
+    elif salario_bruto > 900 and salario_bruto <= 1500:
+        ir = 5
+    elif salario_bruto > 1500 and salario_bruto <= 2500:
+        ir = 10
+    elif salario_bruto > 2500:
+        ir = 20
+    inss = 10
+    sindicato = 3
+    fgts = 11
+    desconto_ir = float(((salario_bruto * ir) / 100))
+    desconto_inss = float(((salario_bruto * inss) / 100))
+    desconto_sindicato = float((salario_bruto * sindicato) / 100)
+    desconto_fgts = float((salario_bruto * fgts) / 100)
+    total_desconto = float(salario_bruto * (ir + inss + sindicato) / 100)
+    salario_liquido = salario_bruto - total_desconto
+    linha_1 = f"Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})"
+    linha_2 = f"(-) IR ({ir}%)"
+    linha_1num = f"{salario_bruto:.2f}"
+    linha_2num = f"{desconto_ir:.2f}"
+    linha_3num = f"{desconto_inss:.2f}"
+    linha_4num = f"{desconto_sindicato:.2f}"
+    linha_5num = f"{desconto_fgts:.2f}"
+    linha_6num = f"{total_desconto:.2f}"
+    linha_7num = f"{salario_liquido:.2f}"
+    print(linha_1.ljust(34), ": R$", linha_1num.rjust(8))
+    print(linha_2.ljust(34), ": R$", linha_2num.rjust(8))
+    print(f"(-) INSS (10%)                     : R$", linha_3num.rjust(8))
+    print(f"(-) Sindicato (3%)                 : R$", linha_4num.rjust(8))
+    print(f"FGTS (11%)                         : R$", linha_5num.rjust(8))
+    print(f"Total de descontos                 : R$", linha_6num.rjust(8))
+    print(f"Salário Liquido                    : R$", linha_7num.rjust(8))
+
+
+
+
+

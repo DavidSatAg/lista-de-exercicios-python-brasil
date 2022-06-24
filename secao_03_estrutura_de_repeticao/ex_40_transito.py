@@ -28,3 +28,28 @@ Mostre os valores com uma casa decimail
 
 def calcular_estatisticas(*cidades):
     """Escreva aqui em baixo a sua solução"""
+    maior_indice_acidentes = menor_indice_acidentes = (int(cidades[0][2]) * 1000) / int(cidades[0][1])
+    nome_cidade_maior_indice = nome_cidade_menor_indice = cidades[0][0]
+    i = 0
+    total_veiculos = 0
+    contador = 0
+    acidentes_cidade_menos_150_000_habitantes = 0
+    for i in range(len(cidades)):
+        indice_de_acidentes = (int(cidades[i][2]) * 1000) / int(cidades[i][1])
+        if indice_de_acidentes > maior_indice_acidentes:
+            maior_indice_acidentes = indice_de_acidentes
+            nome_cidade_maior_indice = cidades[i][0]
+        if indice_de_acidentes < menor_indice_acidentes:
+            menor_indice_acidentes = indice_de_acidentes
+            nome_cidade_menor_indice = cidades[i][0]
+        if int(cidades[i][1] <= 150_000):
+            contador += 1
+            acidentes_cidade_menos_150_000_habitantes += int(cidades[i][2])
+        total_veiculos += int(cidades[i][1])
+    media = total_veiculos / len(cidades)
+    media_de_acidentes_total_cidade_menos_150_000_habitantes = acidentes_cidade_menos_150_000_habitantes / contador
+    print(f"O maior índice de acidentes é de {nome_cidade_maior_indice}, com {maior_indice_acidentes:.1f} acidentes por mil carros.")
+    print(f"O menor índice de acidentes é de {nome_cidade_menor_indice}, com {menor_indice_acidentes:.1f} acidentes por mil carros.")
+    print(f"O média de veículos por cidade é de {media:.0f}.")
+    print(f"A média de acidentes total nas cidades com menos de 150 mil carros é de {media_de_acidentes_total_cidade_menos_150_000_habitantes:.1f} acidentes.")
+        
