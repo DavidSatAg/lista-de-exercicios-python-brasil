@@ -28,3 +28,26 @@ Compara duas strings
 
 def comparar(s1: str, s2: str):
     """Escreva aqui em baixo a sua solução"""
+    tamanho_igual = False
+    string_igual = False
+    if len(s1) == len(s2):
+        tamanho_igual = True
+        if s1 == s2:
+            string_igual = True
+    imprimir_resultado(s1, s2, tamanho_igual, string_igual)
+
+
+def imprimir_resultado(s1, s2, valor1, valor2):
+    print(f"String 1: {s1}")
+    print(f"String 2: {s2}")
+    print(f'Tamanho de "{s1}": {len(s1)} caracteres')
+    print(f'Tamanho de "{s2}": {len(s2)} caracteres')
+    if valor1:
+        print("As duas strings possuem  mesmo tamanho.")
+    else:
+        print("As duas strings são de tamanhos diferentes.")
+    if valor2:
+        print("As duas strings possuem conteúdo igual.")
+    else:
+        print("As duas strings possuem conteúdo diferente.")
+
