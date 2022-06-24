@@ -35,3 +35,7 @@ Nome na vertical em escada invertida. Altere o programa anterior de modo que a e
 
 def inverter_escada(nome:str):
     """Escreva aqui em baixo a sua solução"""
+    nome_lista = list(nome)
+    for i in range(len(nome)):
+        print(*nome_lista, sep='')
+        del nome_lista[-1]
